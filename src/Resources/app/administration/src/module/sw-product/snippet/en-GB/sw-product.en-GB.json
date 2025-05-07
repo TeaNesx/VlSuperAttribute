@@ -1,0 +1,14 @@
+{
+  "vl-super-attribute": {
+    "sw-product": {
+      "variations": {
+        "deliveryModal": {
+          "variantImages": "Variant Images",
+          "variantImagesExplanation": "Here you can manage the images for each product variant.",
+          "variantName": "Variant name",
+          "variantImage": "Image"
+        }
+      }
+    }
+  }
+}

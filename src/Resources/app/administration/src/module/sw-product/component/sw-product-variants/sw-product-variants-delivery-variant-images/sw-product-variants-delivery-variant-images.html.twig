@@ -1,0 +1,49 @@
+{% block sw_product_variants_delivery_variant_images %}
+<div class="sw-product-variants-delivery-variant-images">
+    {% block sw_product_variants_delivery_variant_images_content %}
+    <sw-container
+        columns="1fr"
+        gap="0px 30px"
+    >
+        {% block sw_product_variants_delivery_variant_images_content_grid %}
+        <sw-data-grid
+            :is-loading="isLoading"
+            :data-source="[]"
+            :columns="[
+                {
+                    property: 'name',
+                    label: $tc('vl-super-attribute.sw-product.variations.deliveryModal.variantName'),
+                    primary: true
+                },
+                {
+                    property: 'image',
+                    label: $tc('vl-super-attribute.sw-product.variations.deliveryModal.variantImage')
+                }
+            ]"
+            :show-selection="false"
+            :is-record-editable="() => false"
+            :is-record-selectable="() => false"
+            :show-actions="false"
+            :show-settings="false"
+        >
+            {% block sw_product_variants_delivery_variant_images_content_grid_column_image %}
+            <template #column-image="{ item }">
+                <sw-media-preview
+                    v-if="item.media"
+                    :source="item.media.url"
+                    :show-controls="false"
+                    :use-thumbnails="false"
+                />
+                <sw-icon
+                    v-else
+                    name="regular-image"
+                    size="45px"
+                />
+            </template>
+            {% endblock %}
+        </sw-data-grid>
+        {% endblock %}
+    </sw-container>
+    {% endblock %}
+</div>
+{% endblock %}

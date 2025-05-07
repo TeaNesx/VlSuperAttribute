@@ -1,0 +1,31 @@
+ {% block sw_product_modal_delivery_sidebar_tabs_items %}
+    {% parent %}
+    
+    <sw-tabs-item
+        :active="activeTab == 'variantImages'"
+        @click="activeTab = 'variantImages'"
+    >
+        {{ $tc('vl-super-attribute.sw-product.variations.deliveryModal.variantImages') }}
+    </sw-tabs-item>
+{% endblock %}
+
+{% block sw_product_modal_delivery_sidebar_descriptions %}
+    {% parent %}
+    
+    <p v-if="activeTab == 'variantImages'">
+        {{ $tc('vl-super-attribute.sw-product.variations.deliveryModal.variantImagesExplanation') }}
+    </p>
+{% endblock %}
+
+{% block sw_product_modal_delivery_main %}
+    {% parent %}
+    
+    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+    {% block sw_product_modal_delivery_variant_images %}
+    <sw-product-variants-delivery-variant-images
+        v-if="activeTab == 'variantImages'"
+        :product="product"
+        :selected-groups="selectedGroups"
+    />
+    {% endblock %}
+{% endblock %}
