@@ -6,7 +6,9 @@
           "variantImages": "Variant Images",
           "variantImagesExplanation": "Here you can manage the images for each product variant.",
           "variantName": "Variant name",
-          "variantImage": "Image"
+          "variantColor": "Color",
+          "variantImage": "Image",
+          "uploadImage": "Upload image"
         }
       }
     }
